@@ -5,7 +5,9 @@ const MainLayout = () => {
   return (
     <div>
       <Header></Header>
-      <Outlet></Outlet>
+      <main className="max-w-[1500px] mx-auto px-5 md:px-12 lg:px-24">
+        <Outlet></Outlet>
+      </main>
     </div>
   );
 };

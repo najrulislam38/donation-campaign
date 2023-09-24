@@ -5,7 +5,7 @@ import "./Header.css";
 
 const Header = () => {
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
   return (
     <header className="w-full h-fit">
       {pathname === "/" ? (
