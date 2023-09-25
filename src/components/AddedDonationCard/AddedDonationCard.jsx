@@ -18,10 +18,14 @@ const AddedDonationCard = ({ addedDonation }) => {
         style={{
           backgroundColor: `${card_bg}`,
         }}
-        className={` shadow flex gap-5  rounded-xl`}
+        className={` shadow flex flex-col md:flex-row gap-5  rounded-xl`}
       >
         <figure>
-          <img src={picture} alt={`${category} image`} />
+          <img
+            src={picture}
+            alt={`${category} image`}
+            className="h-full w-full"
+          />
         </figure>
         <div className="p-5">
           <p
