@@ -8,6 +8,8 @@ const Donation = () => {
 
   const [donationsAdded, setDonationsAdded] = useState([]);
 
+  const [isShowAll, setIsShowAll] = useState(false);
+
   useEffect(() => {
     const storedDonationIds = getDonationToStoredLocalStorage();
     // console.log(storedDonationIds);
@@ -26,16 +28,39 @@ const Donation = () => {
 
   console.log(donationsAdded);
 
+  const handleDonationButton = () => {
+    setIsShowAll(true);
+    const showAllButton = document.getElementById("show-all-button");
+
+    showAllButton.classList.add("hidden");
+  };
+
   return (
     <section className="my-10">
       <div className="grid gap-6 lg:grid-cols-2 pb-10">
-        {donationsAdded.map((addedDonation) => (
-          <AddedDonationCard
-            key={addedDonation.id}
-            addedDonation={addedDonation}
-          ></AddedDonationCard>
-        ))}
+        {isShowAll
+          ? donationsAdded.map((addedDonation) => (
+              <AddedDonationCard
+                key={addedDonation.id}
+                addedDonation={addedDonation}
+              ></AddedDonationCard>
+            ))
+          : donationsAdded
+              .slice(0, 4)
+              .map((addedDonation) => (
+                <AddedDonationCard
+                  key={addedDonation.id}
+                  addedDonation={addedDonation}
+                ></AddedDonationCard>
+              ))}
       </div>
+      <button
+        id="show-all-button"
+        onClick={handleDonationButton}
+        className="btn bg-green-700 block mx-auto text-white hover:bg-green-600"
+      >
+        See all
+      </button>
     </section>
   );
 };
