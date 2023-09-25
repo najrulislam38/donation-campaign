@@ -37,6 +37,13 @@ const Donation = () => {
 
   return (
     <section className="my-10">
+      {donationsAdded.length <= 0 && (
+        <div className=" w-full h-[50vh] flex justify-center items-center ">
+          <h1 className="text-4xl font-semibold text-center text-gray-700">
+            Donation Campaign Empty!
+          </h1>
+        </div>
+      )}
       <div className="grid gap-6 lg:grid-cols-2 pb-10">
         {isShowAll
           ? donationsAdded.map((addedDonation) => (
@@ -54,13 +61,15 @@ const Donation = () => {
                 ></AddedDonationCard>
               ))}
       </div>
-      <button
-        id="show-all-button"
-        onClick={handleDonationButton}
-        className="btn bg-green-700 block mx-auto text-white hover:bg-green-600"
-      >
-        See all
-      </button>
+      {donationsAdded.length > 4 && (
+        <button
+          id="show-all-button"
+          onClick={handleDonationButton}
+          className="btn bg-green-700 block mx-auto text-white hover:bg-green-600"
+        >
+          See all
+        </button>
+      )}
     </section>
   );
 };
