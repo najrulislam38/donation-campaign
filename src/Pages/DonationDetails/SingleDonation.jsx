@@ -12,6 +12,7 @@ const SingleDonation = ({ singleDonation }) => {
 
   const handleAddDonation = () => {
     const storedDonation = getDonationToStoredLocalStorage();
+    // console.log(storedDonation);
 
     const exists = storedDonation?.find((donationId) => donationId === id);
 
