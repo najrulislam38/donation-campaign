@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="max-w-[1500px] mx-auto px-5 md:px-12 lg:px-24 py-6">
       <div className=" flex flex-col md:flex-row gap-10 justify-between items-center">
         <div>
-          <img src="assets/Logo.png" alt="logo" />
+          <img src="/assets/Logo.png" alt="logo" />
         </div>
         <ul className="flex gap-6 lg:gap-10 justify-between items-center">
           <li className="text-lg font-semibold">

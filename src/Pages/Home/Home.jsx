@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 // import { useEffect, useState } from "react";
-import DonationsCard from "../../components/Header/DonationsCard/DonationsCard";
+import DonationsCard from "../../components/DonationsCard/DonationsCard";
 
 const Home = () => {
   const donations = useLoaderData();
-  console.log(donations);
+  // console.log(donations);
 
   // const [donations, setDonations] = useState([]);
 
