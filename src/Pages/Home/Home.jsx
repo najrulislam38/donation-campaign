@@ -1,23 +1,51 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useOutletContext } from "react-router-dom";
 // import { useEffect, useState } from "react";
 import DonationsCard from "../../components/DonationsCard/DonationsCard";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const donations = useLoaderData();
+
+  const searchValue = useOutletContext();
+
+  console.log(searchValue);
+
+  const [displayDonations, setDisplayDonations] = useState([]);
+
+  useEffect(() => {
+    if (searchValue === "Health") {
+      const healthDonation = donations?.filter(
+        (health) => health.category === "Health"
+      );
+      setDisplayDonations(healthDonation);
+    } else if (searchValue === "Education") {
+      const educationDonation = donations?.filter(
+        (education) => education.category === "Education"
+      );
+      setDisplayDonations(educationDonation);
+    } else if (searchValue === "Clothing") {
+      const clothDonations = donations?.filter(
+        (education) => education.category === "Clothing"
+      );
+      setDisplayDonations(clothDonations);
+    } else if (searchValue === "Food") {
+      const foodDonations = donations?.filter(
+        (education) => education.category === "Food"
+      );
+      setDisplayDonations(foodDonations);
+    } else {
+      setDisplayDonations(donations);
+    }
+  }, [searchValue, donations]);
+
+  console.log(displayDonations);
+
   // console.log(donations);
-
-  // const [donations, setDonations] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("data.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setDonations(data));
-  // }, []);
 
   return (
     <section>
       <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-10">
-        {donations?.map((donation) => (
+        {displayDonations?.map((donation) => (
           <DonationsCard key={donation.id} donation={donation}></DonationsCard>
         ))}
       </div>

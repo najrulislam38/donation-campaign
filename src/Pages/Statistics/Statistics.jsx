@@ -15,7 +15,7 @@ const Statistics = () => {
     setStoredDonationItems(storedDonationId.length);
   }, []);
 
-  console.log(storedDonationItems, totalDonationItems);
+  // console.log(storedDonationItems, totalDonationItems);
 
   const data1 = [
     { name: "TotalDonation", value: totalDonationItems },

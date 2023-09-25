@@ -26,7 +26,7 @@ const Donation = () => {
     }
   }, [donations]);
 
-  console.log(donationsAdded);
+  // console.log(donationsAdded);
 
   const handleDonationButton = () => {
     setIsShowAll(true);

@@ -4,5 +4,6 @@
     background-image: url('/assets/Rectangle 4281.png') , linear-gradient( 90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     background-blend-mode: overlay;
 }

@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import Banner from "./Banner";
 import Navbar from "./Navbar";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ handleSubmit }) => {
   const { pathname } = useLocation();
   // console.log(pathname);
   return (
@@ -11,7 +12,7 @@ const Header = () => {
       {pathname === "/" ? (
         <div id="header">
           <Navbar></Navbar>
-          <Banner></Banner>
+          <Banner handleSubmit={handleSubmit}></Banner>
         </div>
       ) : (
         <div>
@@ -20,6 +21,10 @@ const Header = () => {
       )}
     </header>
   );
+};
+
+Header.propTypes = {
+  handleSubmit: PropTypes.func,
 };
 
 export default Header;
