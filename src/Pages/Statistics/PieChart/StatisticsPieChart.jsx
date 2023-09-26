@@ -23,7 +23,7 @@ const StatisticsPieChart = () => {
 
   // const storedDonationData = storedDonationItems % 100;
 
-  console.log(remainderDataPasenteage, storedDonationParsantage);
+  // console.log(remainderDataPasenteage, storedDonationParsantage);
 
   // console.log(storedDonationItems, totalDonationItems);
 

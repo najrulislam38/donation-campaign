@@ -22,7 +22,7 @@ const Banner = ({ handleSubmit }) => {
             <input
               type="submit"
               value="Search"
-              className="bg-[#FF444A] py-4 px-7 text-white text-base font-semibold absolute top-0 right-0"
+              className="bg-[#FF444A] py-4 px-7 text-white text-base font-semibold absolute top-0 right-0 active:opacity-80 transition-all"
             />
           </form>
         </div>

@@ -17,7 +17,7 @@ const DonationsCard = ({ donation }) => {
           className={`card shadow`}
         >
           <figure>
-            <img src={thumbnail} alt={`${category} image`} />
+            <img src={thumbnail} alt={`${category} image`} className="w-full" />
           </figure>
           <div className="p-5">
             <p

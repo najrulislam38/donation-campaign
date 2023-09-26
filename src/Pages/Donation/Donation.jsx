@@ -40,7 +40,7 @@ const Donation = () => {
       {donationsAdded.length <= 0 && (
         <div className=" w-full h-[50vh] flex justify-center items-center ">
           <h1 className="text-4xl font-semibold text-center text-gray-700">
-            Donation Campaign Empty!
+            You have not donation added yet!!!
           </h1>
         </div>
       )}
