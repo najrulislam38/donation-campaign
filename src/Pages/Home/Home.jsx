@@ -8,7 +8,7 @@ const Home = () => {
 
   const searchValue = useOutletContext();
 
-  console.log(searchValue);
+  // console.log(searchValue);
 
   const [displayDonations, setDisplayDonations] = useState([]);
 
@@ -38,7 +38,7 @@ const Home = () => {
     }
   }, [searchValue, donations]);
 
-  console.log(displayDonations);
+  // console.log(displayDonations);
 
   // console.log(donations);
 
