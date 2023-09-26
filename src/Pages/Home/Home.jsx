@@ -7,28 +7,29 @@ const Home = () => {
   const donations = useLoaderData();
 
   const searchValue = useOutletContext();
+  // const searchValueLower = searchValue.toLowerCase();
 
-  // console.log(searchValue);
+  // console.log(searchValueLower);
 
   const [displayDonations, setDisplayDonations] = useState([]);
 
   useEffect(() => {
-    if (searchValue === "Health") {
+    if (searchValue === "Health".toLowerCase()) {
       const healthDonation = donations?.filter(
         (health) => health.category === "Health"
       );
       setDisplayDonations(healthDonation);
-    } else if (searchValue === "Education") {
+    } else if (searchValue === "Education".toLowerCase()) {
       const educationDonation = donations?.filter(
         (education) => education.category === "Education"
       );
       setDisplayDonations(educationDonation);
-    } else if (searchValue === "Clothing") {
+    } else if (searchValue === "Clothing".toLowerCase()) {
       const clothDonations = donations?.filter(
         (education) => education.category === "Clothing"
       );
       setDisplayDonations(clothDonations);
-    } else if (searchValue === "Food") {
+    } else if (searchValue === "Food".toLowerCase()) {
       const foodDonations = donations?.filter(
         (education) => education.category === "Food"
       );

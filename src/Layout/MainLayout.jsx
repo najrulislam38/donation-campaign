@@ -7,7 +7,9 @@ const MainLayout = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearchInputValue(event.target.name.value);
+    const inputValue = event.target.name.value;
+    const inputValueLowerCase = inputValue.toLowerCase();
+    setSearchInputValue(inputValueLowerCase);
   };
 
   // console.log(searchInputValue);
